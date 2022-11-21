@@ -2,4 +2,8 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
+<<<<<<< HEAD
 //zozio
+=======
+// Yes
+>>>>>>> 615f254 (WIP)
