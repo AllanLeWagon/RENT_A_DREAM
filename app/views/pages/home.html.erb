@@ -1,13 +1,16 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('banner.png')%>)">
-  <div class="sign sign-in">
-    <a href="/users/sign_in" class="btn btn-outline-light">Login</a>
-  </div>
-  <div class="container text-center">
-    <h1>Rent a Dream</h1>
-    <h2 class="text-light"> Let all your wildest dreams come true</h2>
-    <i class="fa-solid fa-chevron-down"></i>
-    <div class="sign sign-up">
-      <a class="btn btn-outline-light" href="/users/sign_up">Register</a>
+<div>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('banner.png')%>)">
+    <div class="sign sign-in">
+      <a href="/users/sign_in" class="btn btn-outline-light">Login</a>
+    </div>
+    <div class="container text-center">
+      <h1>Rent a Dream</h1>
+      <h2 class="text-light"> Let all your wildest dreams come true</h2>
+      <i class="fa-solid fa-chevron-down"></i>
+      <div class="sign sign-up">
+        <a class="btn btn-outline-light" href="/users/sign_up">Register</a>
+      </div>
     </div>
   </div>
+    <%= render "shared/navbar"  %>
 </div>
