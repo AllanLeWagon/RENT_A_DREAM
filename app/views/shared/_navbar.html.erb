@@ -5,15 +5,27 @@
       <button class="btn btn-outline-light my-2 my-sm-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
 
+    <p> <% if current_user %>
+    <%= current_user.email %>
+    <% end %> </p>
+    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item dropdown">
             <div class="dropdown-toggle btn btn-outline-light" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Profile</div>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
-            </div>
+              <a class="dropdown-item" href="#">My account</a>
+              <a class="dropdown-item" href="#">Bookings</a>
+              <a class="dropdown-item" href="#">Create an experience</a>
+
+              <div class="logout">
+              <%= button_to(
+                "Log out",
+                destroy_user_session_path,
+                data: {turbo: false},
+                method: :delete
+              ) %>
+              </div>
           </li>
           <!--li class="nav-item"-->
           <!--/li-->
