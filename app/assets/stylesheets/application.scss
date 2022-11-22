@@ -11,3 +11,9 @@
 @import "components/index";
 @import "pages/index";
 
+button, select {
+  text-transform: none;
+  padding-left: 17px;
+  border: none;
+  background: none;
+}

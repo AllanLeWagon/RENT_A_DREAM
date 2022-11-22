@@ -9,25 +9,43 @@
 Article.destroy_all
 User.destroy_all
 
-u1 = User.create!(email: 'a@example.com', password: 'azerty')
-u2 = User.create!(email: 'b@example.com', password: 'azerty')
-u3 = User.create!(email: 'c@example.com', password: 'azerty')
+u1 = User.create!(email: 'Allan@example.com', password: 'azerty', first_name: "Allan", last_name: "Gneau")
+u2 = User.create!(email: 'Cgros@example.com', password: 'azerty', first_name: "Charles", last_name: "Henri IV")
+u3 = User.create!(email: 'Jojo@example.com', password: 'azerty', first_name: "Jojo", last_name: "Bizarre-adventure")
+u4 = User.create!(email: 'Ines@example.com', password: 'azerty', first_name: "Ines", last_name: "Ta")
 
 Article.create!({
-    owner: u1,
-    name: 'satellite 1',
-    price: 22,
-    description: "ma petite description",
-    image_url: 'https://www.economie.gouv.fr/files/files/directions_services/patrimoine/satellite.png',
-    service_type: 'transport'
+  owner: u1,
+  name: 'satellite 1',
+  price: 22,
+  description: "elon musk",
+  image_url: 'https://www.economie.gouv.fr/files/files/directions_services/patrimoine/satellite.png',
+  service_type: 'experience'
 })
-
 
 Article.create!({
   owner: u2,
-  name: 'satellite 2',
-  price: 22,
-  description: "ma petite description",
-  image_url: 'https://upload.wikimedia.org/wikipedia/commons/1/18/AEHF_1.jpg',
+  name: 'submarine',
+  price: 20,
+  description: "tu pues du cul",
+  image_url: 'https://i.dailymail.co.uk/i/pix/2015/04/09/10/2760F4AF00000578-3030728-image-m-19_1428571334565.jpg',
   service_type: 'transport'
+})
+
+Article.create!({
+  owner: u3,
+  name: 'armed cheetah',
+  price: 23,
+  description: "javoue c'est incr",
+  image_url: 'https://files.slack.com/files-pri/T02NE0241-F04BP6TASH4/dall__e_2022-11-21_17.25.15_-_guepard_head.png',
+  service_type: ''
+})
+
+Article.create!({
+  owner: u4,
+  name: 'private island',
+  price: 21,
+  description: "pas ouf",
+  image_url: 'https://cdn.vox-cdn.com/thumbor/njcu1bVIk81B5VqzQxLpUbwJq8o=/0x0:3992x2992/1200x800/filters:focal(1677x1177:2315x1815)/cdn.vox-cdn.com/uploads/chorus_image/image/66099011/exclusive_private_island_custom_1.0.jpg',
+  service_type: 'experience'
 })
