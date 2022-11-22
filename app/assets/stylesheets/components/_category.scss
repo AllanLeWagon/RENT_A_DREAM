@@ -1,0 +1,36 @@
+.container-articles {
+  background-color: #353b3c;
+
+  h1 {
+    color: #d9d9d9;
+  }
+
+  h3 {
+    margin: 0;
+    font-family: Italiana;
+    font-weight: light;
+  }
+
+}
+
+.category {
+  background-color: #d9d9d9;
+  height: 70px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icon-1, .icon-2, .icon-3 ,.icon-4 {
+  display: inline-block;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  display: inline-block;
+  margin-right: 16px;
+}
+
+.text-category {
+  align-items: center;
+}
