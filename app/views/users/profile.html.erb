@@ -1,0 +1,5 @@
+<h1> <%= current_user.email %></h1>
+
+<% current_user.articles.each do |article| %>
+  <p><%= article.name %> - price : <%= article.price %> M</p>
+<% end %>
