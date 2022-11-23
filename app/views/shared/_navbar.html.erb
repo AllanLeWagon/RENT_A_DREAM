@@ -16,7 +16,8 @@
           <li class="nav-item dropdown">
             <div class="dropdown-toggle btn btn-outline-light" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Profile</div>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">My account</a>
+              <div><%= link_to "My account", profile_path, class: "dropdown-item" %></div>
+
               <a class="dropdown-item" href="#">Bookings</a>
               <a class="dropdown-item" href="articles/new">Create an experience</a>
 
