@@ -14,38 +14,50 @@ u2 = User.create!(email: 'Cgros@example.com', password: 'azerty', first_name: "C
 u3 = User.create!(email: 'Jojo@example.com', password: 'azerty', first_name: "Jojo", last_name: "Bizarre-adventure")
 u4 = User.create!(email: 'Ines@example.com', password: 'azerty', first_name: "Ines", last_name: "Ta")
 
-Article.create!({
+a1 = Article.new({
   owner: u1,
   name: 'satellite 1',
   price: 22,
   description: "elon musk",
-  image_url: 'https://www.economie.gouv.fr/files/files/directions_services/patrimoine/satellite.png',
   service_type: 'experience'
 })
 
-Article.create!({
+a1.image.attach(io: File.open('images_seed/satellite.png'), filename: 'satellite.png')
+
+a1.save!
+
+a2 = Article.new({
   owner: u2,
-  name: 'submarine',
-  price: 20,
-  description: "tu pues du cul",
-  image_url: 'https://i.dailymail.co.uk/i/pix/2015/04/09/10/2760F4AF00000578-3030728-image-m-19_1428571334565.jpg',
+  name: 'Visit the ISS',
+  price: 20000000,
+  description: "spacial station of the big beau gosse",
   service_type: 'transport'
 })
 
-Article.create!({
+a2.image.attach(io: File.open('images_seed/ISS.jpeg'), filename: 'ISS.jpeg')
+
+a2.save!
+
+a3 = Article.new({
   owner: u3,
-  name: 'armed cheetah',
-  price: 23,
+  name: 'The Best Yatch',
+  price: 1000000,
   description: "javoue c'est incr",
-  image_url: 'https://files.slack.com/files-pri/T02NE0241-F04BP6TASH4/dall__e_2022-11-21_17.25.15_-_guepard_head.png',
-  service_type: ''
+  service_type: 'travel'
 })
 
-Article.create!({
+a3.image.attach(io: File.open('images_seed/Yatchofcharle.webp'), filename: 'Yatchofcharle.webp')
+
+a3.save!
+
+a4 = Article.new({
   owner: u4,
-  name: 'private island',
-  price: 21,
-  description: "pas ouf",
-  image_url: 'https://cdn.vox-cdn.com/thumbor/njcu1bVIk81B5VqzQxLpUbwJq8o=/0x0:3992x2992/1200x800/filters:focal(1677x1177:2315x1815)/cdn.vox-cdn.com/uploads/chorus_image/image/66099011/exclusive_private_island_custom_1.0.jpg',
+  name: 'guard bird',
+  price: 667,
+  description: "fait plus de 6mètres et détuit allan",
   service_type: 'experience'
 })
+
+a4.image.attach(io: File.open('images_seed/oiseau terreur.jpeg'), filename: 'oiseau terreur.jpeg')
+
+a4.save!
