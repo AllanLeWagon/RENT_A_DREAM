@@ -44,7 +44,7 @@
   <h1>Our offering</h1>
     <div class="cards">
     <% @articles.each do |article| %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= article.image_url %>)">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path article.image.key, height: 300, width: 400, crop: :fill %>)">
           <div class="text-card"><%= article.name %></div>
         </div>
       <% end %>

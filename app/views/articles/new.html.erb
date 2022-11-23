@@ -17,8 +17,8 @@
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "description" } %>
-      <%= f.input :image_url, as: :file %>
-      <%= f.input :service_type,
+      <%= f.input :image, as: :file %>
+      <%= f.input :service_type, :collection => %w[Travel Experience Exotic Event],
                   required: true,
                   input_html: { autocomplete: "service type" } %>
     </div>
