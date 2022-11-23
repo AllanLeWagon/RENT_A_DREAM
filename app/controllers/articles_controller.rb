@@ -9,13 +9,13 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to root_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   private
 
   def article_params
-    params.require(:article).permit(:name, :price, :description, :image_url, :service_type)
+    params.require(:article).permit(:name, :price, :description, :image, :service_type)
   end
 end

@@ -6,45 +6,49 @@
     <div class="container text-center">
       <h1>Rent a Dream</h1>
       <h2 class="text-light"> Let all your wildest dreams come true</h2>
-      <i class="fa-solid fa-chevron-down"></i>
+      <%= link_to root_path(anchor: 'redirect_logged') do %>
+        <i class="fa-solid fa-chevron-down"></i>
+      <% end %>
       <div class="sign sign-up">
         <a class="btn btn-outline-light" href="/users/sign_up">Register</a>
       </div>
     </div>
   </div>
 </div>
-<%= render "shared/navbar"  %>
-<div class="container-articles">
-  <div class="category">
-    <div class="icon-1">
-      <div class="icon"><i class="fa-solid fa-jet-fighter"></i></div>
-      <div class="text-category">
-        <h3>Travel</h3>
+<div class="nav-banner" id="redirect_logged">
+  <%= render "shared/navbar" %>
+  <div class="container-articles">
+    <div class="category">
+      <div class="icon-1">
+        <div class="icon"><i class="fa-solid fa-jet-fighter"></i></div>
+        <div class="text-category">
+          <h3>Travel</h3>
+        </div>
       </div>
-    </div>
-    <div class="icon-2">
-      <div class="icon"><i class="fa-solid fa-star"></i></div>
-      <div class="text-category">
-        <h3>Experience</h3>
+      <div class="icon-2">
+        <div class="icon"><i class="fa-solid fa-star"></i></div>
+        <div class="text-category">
+          <h3>Experience</h3>
+        </div>
       </div>
-    </div>
-    <div class="icon-3">
-      <div class="icon"><i class="fa-solid fa-dragon"></i></div>
-      <div class="text-category">
-        <h3>Exotic</h3>
+      <div class="icon-3">
+        <div class="icon"><i class="fa-solid fa-dragon"></i></div>
+        <div class="text-category">
+          <h3>Exotic</h3>
+        </div>
       </div>
-    </div>
-    <div class="icon-4">
-      <div class="icon"><i class="fa-solid fa-martini-glass-citrus"></i></div>
-      <div class="text-category">
-        <h3>Event</h3>
+      <div class="icon-4">
+        <div class="icon"><i class="fa-solid fa-martini-glass-citrus"></i></div>
+        <div class="text-category">
+          <h3>Event</h3>
+        </div>
       </div>
     </div>
   </div>
-  <h1>Our offering</h1>
+  <div class="container-card">
     <div class="cards">
       <% @articles.each do |article| %>
-        <div  data-bs-toggle="modal" data-bs-target="#article_<%=article.id%>" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= article.image_url %>)">
+        <div data-bs-toggle="modal" data-bs-target="#article_<%=article.id%>" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path article.image.key, height: 300, width: 400, crop: :fill %>)">
           <div class="text-card"><%= article.name.capitalize %></div>
         </div>
 
@@ -77,9 +81,6 @@
             </div>
           </div>
         </div>
-
       <% end %>
     </div>
-
-
 </div>

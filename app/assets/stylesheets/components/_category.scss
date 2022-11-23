@@ -1,8 +1,10 @@
 .container-articles {
-  background-color: #353b3c;
 
-  h1 {
+  h2 {
     color: #d9d9d9;
+    text-align: center;
+    font-family: Italiana;
+    margin-top: .5rem;
   }
 
   h3 {
@@ -10,7 +12,6 @@
     font-family: Italiana;
     font-weight: light;
   }
-
 }
 
 .category {
@@ -18,6 +19,7 @@
   height: 70px;
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 1.5rem;
 }
 
 .icon-1, .icon-2, .icon-3 ,.icon-4 {
@@ -33,4 +35,9 @@
 
 .text-category {
   align-items: center;
+
+}
+
+.container-card {
+  padding: 0px 20px 0px 20px;
 }
