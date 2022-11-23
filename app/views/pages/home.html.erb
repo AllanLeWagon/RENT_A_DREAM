@@ -52,16 +52,27 @@
         <div class="modal fade" id="article_<%=article.id%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <div class="modal-header"> <!-- Add display flex, justify content between-->
+                <div class="header-article">
+                <h1 class="modal-title fs-5" id="exampleModalLabel"><%= article.name %></h1>
+                </div>
+                <div class="exit-button"> <!-- Exit color button in #881212 -->
+                <button data-bs-dismiss="modal"><i class="fa-regular fa-circle-xmark"></i></button>
+                </div>
               </div>
-              <div class="modal-body">
-                <%= article.name %>
+              <div class="modal-body"> <!-- Ajouter display flex, justify-content: in between-->
+                <div class="article-photo">
+                <!-- insert article photos-->
+                </div>
+                <div class="article-description">
+                  <%= article.description %>
+                  <button type="button" class="btn btn-availability">Look for availabilities</button> <!--code CSS for button [text-color #881212, btn color: #C5A1A1 opacity:70% border-radius 20px, font size 22 policy: italiana]+ add a calendar via bootstrap-->
+                </div>
               </div>
+
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <p>$ <%= article.price%> </p> <!--code CSS to display price in botton right corner-->
+                <!-- insert Price + "Prices are subject to change, contact the vendor for more information"-->
               </div>
             </div>
           </div>
