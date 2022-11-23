@@ -3,14 +3,11 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
-  def index
-    @articles = Article.all
-  end
-
   def create
     @article = Article.new(article_params)
+    @article.owner = current_user
     if @article.save
-      redirect_to article_path(@article)
+      redirect_to root_path
     else
       render :new
     end
