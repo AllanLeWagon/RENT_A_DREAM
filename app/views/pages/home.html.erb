@@ -45,42 +45,43 @@
       </div>
     </div>
   </div>
-  <div class="container-card">
-    <div class="cards">
-      <% @articles.each do |article| %>
-        <div data-bs-toggle="modal" data-bs-target="#article_<%=article.id%>" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path article.image.key, height: 300, width: 400, crop: :fill %>)">
-          <div class="text-card"><%= article.name.capitalize %></div>
-        </div>
+</div>
+<div class="container-card">
+  <div class="cards">
+    <% @articles.each do |article| %>
+      <div data-bs-toggle="modal" data-bs-target="#article_<%=article.id%>" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path article.image.key, height: 300, width: 400, crop: :fill %>)">
+        <div class="text-card"><%= article.name.capitalize %></div>
+      </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="article_<%=article.id%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <div class="header-article">
-                  <h2 class="modal-title fs-5" id="exampleModalLabel"><%= article.name.capitalize %></h2>
-                </div>
-                <div class="exit-button">
-                  <button data-bs-dismiss="modal"><i class="fa-regular fa-circle-xmark"></i></button>
-                </div>
+      <!-- Modal -->
+      <div class="modal fade" id="article_<%=article.id%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="header-article">
+                <h2 class="modal-title fs-5" id="exampleModalLabel"><%= article.name.capitalize %></h2>
               </div>
-              <div class="modal-body"> <!-- Ajouter display flex, justify-content: in between-->
-                <%# <div class="article-photo"> %>
-                  <img src="<%=article.image_url %>" alt="article image">
-                <%# </div> %>
-                <div class="article-description">
-                  <p><%= article.description %></p>
-                  <button type="button" class="btn btn-availability">Look for availabilities</button> <!--code CSS for button [text-color #881212, btn color: #C5A1A1 opacity:70% border-radius 20px, font size 22 policy: italiana]+ add a calendar via bootstrap-->
-                </div>
+              <div class="exit-button">
+                <button data-bs-dismiss="modal"><i class="fa-regular fa-circle-xmark"></i></button>
               </div>
+            </div>
+            <div class="modal-body"> <!-- Ajouter display flex, justify-content: in between-->
+              <%# <div class="article-photo"> %>
+                <img src="<%= cl_image_path article.image.key %>" alt="article image">
+              <%# </div> %>
+              <div class="article-description">
+                <p><%= article.description %></p>
+                <button type="button" class="btn btn-availability">Look for availabilities</button> <!--code CSS for button [text-color #881212, btn color: #C5A1A1 opacity:70% border-radius 20px, font size 22 policy: italiana]+ add a calendar via bootstrap-->
+              </div>
+            </div>
 
-              <div class="modal-footer">
-                <p>Starting Price: $ <%= article.price%> </p> <!--code CSS to display price in botton right corner-->
-                <!-- insert Price + "Prices are subject to change, contact the vendor for more information"-->
-              </div>
+            <div class="modal-footer">
+              <p>Starting Price: $ <%= article.price%> </p> <!--code CSS to display price in botton right corner-->
+              <!-- insert Price + "Prices are subject to change, contact the vendor for more information"-->
             </div>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+  </div>
 </div>

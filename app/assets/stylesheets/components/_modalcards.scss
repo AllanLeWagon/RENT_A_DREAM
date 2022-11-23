@@ -1,6 +1,11 @@
 .modal-content {
   background-color: #D9D9D9;
   border-radius: 6px;
+  z-index: 2;
+}
+
+.modal-backdrop {
+  z-index: 0;
 }
 
 // .modal {
