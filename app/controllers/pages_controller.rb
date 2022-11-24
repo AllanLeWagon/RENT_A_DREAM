@@ -3,5 +3,8 @@ class PagesController < ApplicationController
 
   def home
     @articles = Article.all
+    @booking = Booking.new
+    @bookings = Booking.all
+
   end
 end
