@@ -71,10 +71,12 @@
               <%# </div> %>
               <div class="article-description">
                 <p><%= article.description %></p>
-                <button type="button" class="btn btn-availability">Look for availabilities</button> <!--code CSS for button [text-color #881212, btn color: #C5A1A1 opacity:70% border-radius 20px, font size 22 policy: italiana]+ add a calendar via bootstrap-->
+                  <%= simple_form_for [article, @booking], data: { controller: 'flatpickr', 'flatpickr-dates-value': article.bookings.pluck(:date).to_json } do |f| %>
+                    <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "date" } } %>
+                    <%= f.submit 'Schedule your dream' %>
+                  <% end %> <!--code CSS for button [text-color #881212, btn color: #C5A1A1 opacity:70% border-radius 20px, font size 22 policy: italiana]+ add a calendar via bootstrap-->
               </div>
             </div>
-
             <div class="modal-footer">
               <p>Starting Price: $ <%= article.price%> </p> <!--code CSS to display price in botton right corner-->
               <!-- insert Price + "Prices are subject to change, contact the vendor for more information"-->
