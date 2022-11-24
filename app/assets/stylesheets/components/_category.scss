@@ -19,7 +19,6 @@
   height: 70px;
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 1.5rem;
 }
 
 .icon-1, .icon-2, .icon-3 ,.icon-4 {
@@ -39,5 +38,7 @@
 }
 
 .container-card {
-  padding: 0px 20px 0px 20px;
+  padding: 0 20px;
+  background-color: #353b3c;
+  padding-top: 1.5rem;
 }
