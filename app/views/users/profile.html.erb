@@ -1,11 +1,7 @@
 <div class="cont-profile">
-  <div class="sidebar">
-    <h3>Account</h3>
-    <h3>Bookings</h3>
-    <h3>Products</h3>
-  </div>
   <div class="information">
     <h2>Account Settings</h2>
+    <%= link_to "Home", root_path, class: "btn btn-flat" %>
     <hr>
     <div class="name">
       <div class="first_name">
@@ -13,7 +9,7 @@
         <p><%= current_user.first_name %></p>
       </div>
       <div class="last_name">
-        <h4> First name : </h4>
+        <h4> Last name : </h4>
         <p> <%= current_user.last_name %></p>
       </div>
     </div>
@@ -21,10 +17,18 @@
       <h4> Email : </h4>
       <p> <%= current_user.email %></p>
     </div>
-
   </div>
 </div>
-
-  <% current_user.articles.each do |article| %>
+  <div class="booking">
+    <h4>Your Bookings</h4>
+    <% @bookings.each do |booking| %>
+        <p><%= booking.article.name %></p>
+        <p>Date : <%= booking.date %></p>
+      <% end %>
+  </div>
+  <div class="product">
+    <h4>Your Products</h4>
+    <% current_user.articles.each do |article| %>
       <p><%= article.name %> - price : <%= article.price %> M</p>
     <% end %>
+  </div>
