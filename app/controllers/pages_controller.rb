@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     @booking = Booking.new
     @bookings = Booking.all
     if params[:query].present?
-      sql_query = "name ILIKE :query OR service_type ILIKE :query OR description ILIKE :query"
+      sql_query = "name ILIKE :query OR service_type ILIKE :query"
       @articles = Article.where(sql_query, query: "%#{params[:query]}%")
     else
       @articles = Article.all
