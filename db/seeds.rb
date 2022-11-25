@@ -91,7 +91,7 @@ a7 = Article.new({
   name: 'Run with your bear',
   price: 250,
   description: "Ride with a spécial bear",
-  service_type: 'Experience'
+  service_type: 'exotic'
 })
 
 a7.image.attach(io: File.open('images_seed/The poutine ride.jpeg'), filename: 'The poutine ride.jpeg')
@@ -115,7 +115,7 @@ a9 = Article.new({
   name: 'Submarine',
   price: 250,
   description: "Compact and luxurious private submarine especially designed to fit aboard superyachts. Submerse in water and discover the beauty of the undersea",
-  service_type: 'Experience'
+  service_type: 'Travel'
 })
 
 a9.image.attach(io: File.open('images_seed/GlassSubmarine.jpeg'), filename: 'GlassSubmarine.jpeg')
@@ -127,9 +127,81 @@ a10 = Article.new({
   name: 'Private Jet',
   price: 850,
   description: "Instantly book an entire private aircraft as well as seats on a private jet seamlessly. Our technology makes it possible to book to 2,400 destinations.",
-  service_type: 'Experience'
+  service_type: 'Travel'
 })
 
 a10.image.attach(io: File.open('images_seed/jet-prive.jpeg'), filename: 'jet-prive.jpeg')
 
 a10.save!
+
+a11 = Article.new({
+  owner: u1,
+  name: 'Cheetah race',
+  price: 50000,
+  description: "Ride a fast cheetah !",
+  service_type: 'Exotic'
+})
+
+a11.image.attach(io: File.open('images_seed/Cheetah.jpeg'), filename: 'Cheetah.jpeg')
+
+a11.save!
+
+a12 = Article.new({
+  owner: u1,
+  name: 'Drake',
+  price: 4567,
+  description: "It's Drake",
+  service_type: 'Event'
+})
+
+a12.image.attach(io: File.open('images_seed/Drake.jpeg'), filename: 'Drake.jpeg')
+
+a12.save!
+
+a13 = Article.new({
+  owner: u4,
+  name: 'Eiffel tower',
+  price: 667,
+  description: "La tour Eiffel est une tour de fer puddlé de 330 m de hauteur située à Paris, à l’extrémité nord-ouest du parc du Champ-de-Mars en bordure de la Seine dans le 7ᵉ arrondissement",
+  service_type: 'Event'
+})
+
+a13.image.attach(io: File.open('images_seed/Eiffel-tower.webp'), filename: 'Eiffel-tower.webp')
+
+a13.save!
+
+a14 = Article.new({
+  owner: u2,
+  name: 'Cruise ship',
+  price: 5556,
+  description: "Rent an entire cruise ship for you and your friends ;)",
+  service_type: 'Travel'
+})
+
+a14.image.attach(io: File.open('images_seed/cruise ship.jpeg'), filename: 'cruise ship.jpeg')
+
+a14.save!
+
+a15 = Article.new({
+  owner: u3,
+  name: 'Francis Cabrel',
+  price: 1,
+  description: "Auteur-compositeur-interprète",
+  service_type: 'Event'
+})
+
+a15.image.attach(io: File.open('images_seed/francis.jpeg'), filename: 'francis.jpeg')
+
+a15.save!
+
+a16 = Article.new({
+  owner: u1,
+  name: 'Visit a volcano',
+  price: 578,
+  description: "A volcano is a rupture in the crust of a planetary-mass object, such as Earth, that allows hot lava, volcanic ash, and gases to escape from a magma chambe",
+  service_type: 'Exotic'
+})
+
+a16.image.attach(io: File.open('images_seed/volcan.webp'), filename: 'volcan.webp')
+
+a16.save!
