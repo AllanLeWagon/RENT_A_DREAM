@@ -18,6 +18,21 @@
   justify-content: space-between;
   width: 100vw;
   padding-right: 24px;
+  .btn-flat {
+    color: white;
+    padding: 8px 24px;
+    border-radius: 4px;
+    background: #670BFF;
+    transition: background 0.3s ease;
+    position: absolute;
+    top: 33px;
+    right: 95px;
+  }
+
+  .btn-flat:hover {
+    background: #4D04C4;
+    color: white;
+  }
 }
 
 .sidebar {
@@ -53,20 +68,4 @@
   p {
     margin-top: 24px;
   }
-}
-
-.btn-flat {
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  background: #670BFF;
-  transition: background 0.3s ease;
-  position: absolute;
-  top: 33px;
-  right: 95px;
-}
-
-.btn-flat:hover {
-  background: #4D04C4;
-  color: white;
 }
