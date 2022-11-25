@@ -67,11 +67,11 @@
   <div class="cards">
     <% @articles.each_with_index do |article, i| %>
     <% if i == 0 %>
-      <div id="redirect_logged" data-bs-toggle="modal" data-bs-target="#article_<%=article.id%>" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path article.image.key, height: 300, width: 400, crop: :fill %>)">
+      <div id="redirect_logged" data-bs-toggle="modal" data-bs-target="#article_<%=article.id%>" class="card-category" style="background-image: url(<%= cl_image_path article.image.key, height: 300, width: 400, crop: :fill %>)">
         <div class="text-card"><%= article.name.capitalize %></div>
       </div>
     <% else %>
-      <div data-bs-toggle="modal" data-bs-target="#article_<%=article.id%>" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path article.image.key, height: 300, width: 400, crop: :fill %>)">
+      <div data-bs-toggle="modal" data-bs-target="#article_<%=article.id%>" class="card-category" style="background-image: url(<%= cl_image_path article.image.key, height: 300, width: 400, crop: :fill %>)">
         <div class="text-card"><%= article.name.capitalize %></div>
       </div>
     <% end %>
