@@ -2,10 +2,19 @@
   display: flex;
   padding: 16px;
   background-color: #f5f6f3;
+  p {
+    border: thin solid #2a2a2a;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 0;
+    margin-bottom: 8px;
+    margin-top: 24px;
+  }
 }
 
 .information {
   margin-left: 54px;
+  margin-right: 54px;
   justify-content: space-between;
   width: 100vw;
   padding-right: 24px;
@@ -16,6 +25,8 @@
   border: 0.5px solid #2a2a2a;
   padding: 48px;
   align-items: flex-start;
+  color: #2a2a2a;
+  text-decoration: none;
   h3 {
     border: 3px solid #2a2a2a;
     padding: 8px;
@@ -30,12 +41,32 @@
   padding-bottom: 16px;
   .first_name, .last_name {
     width: 40%;
+    margin-top: 24px;
   }
 }
 
-p {
-  border: thin solid #2a2a2a;
+
+.booking, .product {
+  padding: 54px;
+  margin-left: 16px;
+  background-color: #f5f6f3;
+  p {
+    margin-top: 24px;
+  }
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
   border-radius: 4px;
-  padding: 8px;
-  margin: 0;
+  background: #670BFF;
+  transition: background 0.3s ease;
+  position: absolute;
+  top: 33px;
+  right: 95px;
+}
+
+.btn-flat:hover {
+  background: #4D04C4;
+  color: white;
 }
