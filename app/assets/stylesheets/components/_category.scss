@@ -19,16 +19,21 @@
   height: 70px;
   display: flex;
   justify-content: space-evenly;
-}
-
-.icon-1, .icon-2, .icon-3 ,.icon-4 {
-  display: inline-block;
-  display: flex;
   align-items: center;
 }
 
+.icon-1 {
+  display: flex;
+  align-items: center;
+  color: #353b3c;
+}
+
+.icon-1:hover, .icon:hover {
+  color: #68787c;
+  text-shadow: 1px 1px 2px #e6e0e0;
+}
+
 .icon {
-  display: inline-block;
   margin-right: 16px;
 }
 
