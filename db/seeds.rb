@@ -10,7 +10,7 @@ Article.destroy_all
 User.destroy_all
 
 u1 = User.create!(email: 'Allan@example.com', password: 'azerty', first_name: "Allan", last_name: "Gneau")
-u2 = User.create!(email: 'Cgros@example.com', password: 'azerty', first_name: "Charles", last_name: "Henri IV")
+u2 = User.create!(email: 'Cgros@example.com', password: 'azerty', first_name: "Charles", last_name: "Gros")
 u3 = User.create!(email: 'Jojo@example.com', password: 'azerty', first_name: "Jojo", last_name: "Bizarre-adventure")
 u4 = User.create!(email: 'Ines@example.com', password: 'azerty', first_name: "Ines", last_name: "Ta")
 
