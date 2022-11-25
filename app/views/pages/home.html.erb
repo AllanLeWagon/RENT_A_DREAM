@@ -1,8 +1,11 @@
 <div>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('banner.png')%>)">
     <div class="sign sign-in">
+      <% if current_user %>
+      <% else %>
       <a class="btn btn-flat" href="/users/sign_up">Register</a>
       <a href="/users/sign_in" class="btn btn-flat">Login</a>
+      <% end %>
     </div>
     <div class="container text-center">
       <h1>Rent a Dream</h1>
@@ -14,7 +17,6 @@
         </span>
           <%# <i class="fa-solid fa-chevron-down"></i> %>
         <% end %>
-
     </div>
   </div>
 </div>
@@ -76,7 +78,13 @@
                 <p><%= article.description %></p>
                   <%= simple_form_for [article, @booking], data: { controller: 'flatpickr', 'flatpickr-dates-value': article.bookings.pluck(:date).to_json } do |f| %>
                     <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "date" } } %>
-                    <%= f.submit 'Schedule your dream' %>
+                    <% if current_user %>
+                        <%= f.submit 'Schedule your dream', :class => 'btn'%>
+                    <% else %>
+                      <%= link_to user_session_path do %>
+                      <button type="button" class="btn">You need to be login </button>
+                      <% end %>
+                    <% end %>
                   <% end %> <!--code CSS for button [text-color #881212, btn color: #C5A1A1 opacity:70% border-radius 20px, font size 22 policy: italiana]+ add a calendar via bootstrap-->
               </div>
             </div>
