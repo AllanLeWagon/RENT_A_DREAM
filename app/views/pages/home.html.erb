@@ -59,14 +59,18 @@
     </div>
   </div>
 </div>
+<div class="offering">
+  <h4>Our Offering</h4>
+</div>
+
 <div class="container-card">
   <div class="cards">
     <% @articles.each do |article| %>
-      <div data-bs-toggle="modal" data-bs-target="#article_<%=article.id%>" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path article.image.key, height: 300, width: 400, crop: :fill %>)">
+      <div data-bs-toggle="modal" data-bs-target="#article_<%=article.id%>" class="card-category" style="background-image: url(<%= cl_image_path article.image.key, height: 300, width: 400, crop: :fill %>)">
         <div class="text-card"><%= article.name.capitalize %></div>
       </div>
 
-      <!-- Modal -->
+      <!--   -->
       <div class="modal fade" id="article_<%=article.id%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
@@ -106,6 +110,8 @@
     <% end %>
   </div>
 </div>
+
+  <%= render "shared/footer" %>
 
 <script>
   let elements = document.querySelectorAll('.rolling-text');

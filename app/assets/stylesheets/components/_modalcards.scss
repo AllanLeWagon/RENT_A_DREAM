@@ -18,12 +18,13 @@
 
 .modal-body {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 img {
-  width: 50%;
-  height: auto;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
 }
 
 h2 {
@@ -31,7 +32,8 @@ h2 {
 }
 
 .article-description {
-  margin: 16px;
+  margin: 24px;
+  width: -webkit-fill-available;
   .btn {
     color: #ffffff;
     background-color: #000000;
