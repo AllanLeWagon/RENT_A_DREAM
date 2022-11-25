@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+$delay: 0.015s;
+$duration: 0.6s;
+$easing: cubic-bezier(0.76, 0, 0.24, 1);
+
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 100px 0;
   display: flex;
   height: 100vh;
   position: relative;
@@ -9,18 +15,18 @@
 }
 
 .banner h1 {
-  margin: 0;
+  margin-bottom: 62px;
   color: #C5A1A1;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 64px;
   text-align: center;
-  font-family: Italiana;
-  font-weight: Regular;
+  font-weight: 300;
+  letter-spacing: 6px;
 }
 
-.banner h2 {
-  font-family: Italiana;
-  font-weight: Regular;
+span.letter {
+  text-align: left;
+  font-size: 24px;
+  color: white;
 }
 
 .banner p {
@@ -30,28 +36,114 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.sign-up {
+.btn-flat {
+  color: #2A2A2A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  background-color:#E2E5DC;
+  &:hover {
+    background-color:#E2E5DC;
+    color: #2A2A2A;
+  }
+}
+.sign-up .sign-in {
   text-align: center;
   font-size: 30px;
-  font-family: Italiana;
-  font-weight: Regular;
 }
+// hover background-color #F5F6F3
 
 .sign-in {
-  color: rgba(255,255,255,1);
   position: absolute;
-  font-size: 30px;
-  opacity: 1;
-  text-align: center;
   top : 20px;
   right : 9px;
   padding: 8px;
-  font-family: Italiana;
-  font-weight: Regular;
 }
 
 .fa-chevron-down {
   font-size: 100px;
   color: #C5A1A1;
   opacity: 0.7;
+  margin-top: 24px;
 }
+
+.rolling-text{
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  $font-size: 24px;
+  font-size: $font-size;
+  line-height: $font-size * 1.5;
+  letter-spacing: $font-size / 2;
+  height: $font-size * 1.5;
+  text-decoration: none;
+  overflow: hidden;
+  color: #1a1a1a;
+  text-align: left;
+
+  &:hover,
+  &.play{
+    .letter{
+      transform: translateY(-100%);
+    }
+  }
+  .block:last-child{
+    color: #F5F6F3;
+  }
+  .letter{
+    display: inline-block;
+    transition: transform $duration $easing;
+  }
+}
+
+@for $i from 0 through 20 {
+  .letter:nth-child(#{$i + 1}) {
+    transition-delay: $delay * $i;
+  }
+}
+
+// .arrow-scroll {
+//     width: 2rem;
+//     height: 2rem;
+//     border-width: 2px;
+//     border-style: solid;
+//     border-left: 0;
+//     border-top: 0;
+//     -webkit-transform: rotate(45deg);
+//     transform: rotate(45deg);
+//     position: relative;
+//     top: 50%;
+//     display: inline-block;
+
+
+//   }
+
+//   @keyframes arrow-scroll {
+//     0% {transform: translateY(0)}
+//     50% {transform: translateY(-7px)}
+//     55% {transform: translateY(-7px)}
+//     100% {transform: translateY(0)}
+//   }
+.container-arrow{
+  margin-top: -20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color:#000;
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
+  position: absolute;
+  bottom:0;left:0;
+  z-index: 10;
+  width:100%;
+  padding-bottom: 15px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.container-arrow:hover,
+.container-arrow:focus{text-decoration: none;}
+
+  /* Arrow Bouncing */
+  .container-arrow span{  display: inline-block; font-size: 80px;	 animation: .7s down  infinite alternate; -webkit-animation: .7s down infinite alternate; }
+  /***Animation Arrow down***/
+  @keyframes down{ 0%{transform:translateY(0px)} 100%{transform:translateY(20px)} }
+  @-webkit-keyframes down{ 0%{-webkit-transform:translateY(0px)} 100%{-webkit-transform:translateY(20px)} }
+

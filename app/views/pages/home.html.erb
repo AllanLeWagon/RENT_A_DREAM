@@ -1,17 +1,20 @@
 <div>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('banner.png')%>)">
     <div class="sign sign-in">
-      <a href="/users/sign_in" class="btn btn-outline-light">Login</a>
+      <a class="btn btn-flat" href="/users/sign_up">Register</a>
+      <a href="/users/sign_in" class="btn btn-flat">Login</a>
     </div>
     <div class="container text-center">
       <h1>Rent a Dream</h1>
-      <h2 class="text-light"> Let all your wildest dreams come true</h2>
-      <%= link_to root_path(anchor: 'redirect_logged') do %>
-        <i class="fa-solid fa-chevron-down"></i>
-      <% end %>
-      <div class="sign sign-up">
-        <a class="btn btn-outline-light" href="/users/sign_up">Register</a>
-      </div>
+      <a class="rolling-text" href="#"> Let all your wildest dreams come true</a>
+      <br>
+        <%= link_to root_path(anchor: 'redirect_logged'), class:"container-arrow scroll-to" do %>
+        <span>
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+        </span>
+          <%# <i class="fa-solid fa-chevron-down"></i> %>
+        <% end %>
+
     </div>
   </div>
 </div>
@@ -87,3 +90,26 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  let elements = document.querySelectorAll('.rolling-text');
+
+  elements.forEach(element => {
+    let innerText = element.innerText;
+    element.innerHTML = '';
+
+    let textContainer = document.createElement('div');
+    textContainer.classList.add('block');
+
+    for (let letter of innerText) {
+      let span = document.createElement('span');
+      span.innerText = letter.trim() === '' ? '\xa0': letter;
+      span.classList.add('letter');
+      textContainer.appendChild(span);
+    }
+
+    element.appendChild(textContainer);
+    element.appendChild(textContainer.cloneNode(true));
+  });
+
+</script>
